@@ -137,8 +137,6 @@
             <!-- Video Container -->
             <div class="mb-10">
                 <div class="relative w-full rounded-2xl overflow-hidden shadow-2xl bg-black/40 border border-white/20 aspect-video">
-                    <!-- Demo HTML5 Video / Direct Iframe Embed Placeholder -->
-                    <!-- NOT: Hostinger'a yüklediğinde kendi YouTube embed veya MP4 video linkini buraya ekleyebilirsin -->
                     <iframe 
                         id="romantic-video"
                         class="w-full h-full"
@@ -149,9 +147,6 @@
                         allowfullscreen>
                     </iframe>
                 </div>
-                <p class="text-center text-xs text-white/70 mt-3 italic">
-                    <i class="fa-solid fa-circle-info mr-1"></i> (Hostinger'a siteni yükledikten sonra kendi video linkini <code>src</code> alanına kolayca yerleştirebilirsin)
-                </p>
             </div>
 
             <!-- Romantic Message Card -->
@@ -164,24 +159,27 @@
                 </p>
             </div>
 
-            <!-- Cute Photo Gallery Grid Placeholder -->
+            <!-- Cute Photo Gallery Grid -->
             <div>
                 <h3 class="text-lg font-semibold mb-4 text-white/90 flex items-center gap-2">
                     <i class="fa-solid fa-images text-pink-300"></i> En Özel Anlarımız
                 </h3>
                 <div class="grid grid-cols-2 sm:grid-cols-3 gap-4">
+                    <!-- 1. Fotoğrafın (Kendi Fotoğrafın) -->
                     <div class="group relative aspect-square rounded-xl overflow-hidden border border-white/30 bg-white/10 shadow-md transition transform hover:scale-105">
-                        <img src="https://images.unsplash.com/photo-1518199266791-5375a83190b7?auto=format&fit=crop&w=500&q=80" alt="Fotoğraf 1" class="w-full h-full object-cover">
+                        <img src="20251228_171447.jpg" alt="Özel Anımız" class="w-full h-full object-cover">
                         <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent opacity-0 group-hover:opacity-100 transition flex items-end p-3">
                             <span class="text-xs text-white font-medium">Güzel Bir Gün ✨</span>
                         </div>
                     </div>
+                    <!-- 2. Fotoğraf -->
                     <div class="group relative aspect-square rounded-xl overflow-hidden border border-white/30 bg-white/10 shadow-md transition transform hover:scale-105">
                         <img src="https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?auto=format&fit=crop&w=500&q=80" alt="Fotoğraf 2" class="w-full h-full object-cover">
                         <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent opacity-0 group-hover:opacity-100 transition flex items-end p-3">
                             <span class="text-xs text-white font-medium">Birlikte Gülümserken 💖</span>
                         </div>
                     </div>
+                    <!-- 3. Fotoğraf -->
                     <div class="group relative aspect-square rounded-xl overflow-hidden border border-white/30 bg-white/10 shadow-md transition transform hover:scale-105 col-span-2 sm:col-span-1">
                         <img src="https://images.unsplash.com/photo-1522673607200-164d1b6ce486?auto=format&fit=crop&w=500&q=80" alt="Fotoğraf 3" class="w-full h-full object-cover">
                         <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent opacity-0 group-hover:opacity-100 transition flex items-end p-3">
@@ -201,16 +199,13 @@
 
     <!-- JavaScript Controls -->
     <script>
-        // Set Password
         const CORRECT_PASSWORD = "1402";
 
-        // Generate Floating Background Hearts
         function createHeart() {
             const heartsContainer = document.getElementById('hearts-container');
             const heart = document.createElement('div');
             heart.classList.add('heart-particle');
             
-            // Random heart icons or colors
             const icons = ['fa-heart', 'fa-heart text-pink-300', 'fa-heart text-rose-300', 'fa-heart text-red-400'];
             const randomIcon = icons[Math.floor(Math.random() * icons.length)];
             
@@ -228,7 +223,6 @@
 
         setInterval(createHeart, 600);
 
-        // Handle Password Submission
         function handleLogin(event) {
             event.preventDefault();
             const passwordInput = document.getElementById('password-input');
@@ -237,13 +231,9 @@
             const errorMessage = document.getElementById('error-message');
 
             if (passwordInput.value === CORRECT_PASSWORD) {
-                // Correct Password Animation
                 errorMessage.classList.add('hidden');
-                
-                // Trigger Romantic Heart Confetti
                 triggerHeartConfetti();
 
-                // Smooth Hide Lock Screen
                 lockScreen.classList.remove('scale-100', 'opacity-100');
                 lockScreen.classList.add('scale-95', 'opacity-0');
                 
@@ -251,7 +241,6 @@
                     lockScreen.classList.add('hidden');
                     contentScreen.classList.remove('hidden');
                     
-                    // Show Content Screen
                     setTimeout(() => {
                         contentScreen.classList.remove('opacity-0', 'translate-y-8');
                         contentScreen.classList.add('opacity-100', 'translate-y-0');
@@ -260,7 +249,6 @@
                 }, 500);
 
             } else {
-                // Wrong Password Action
                 lockScreen.classList.add('shake');
                 errorMessage.classList.remove('hidden');
                 passwordInput.value = '';
@@ -272,7 +260,6 @@
             }
         }
 
-        // Heart Confetti Effect
         function triggerHeartConfetti() {
             var duration = 3 * 1000;
             var animationEnd = Date.now() + duration;
@@ -290,13 +277,11 @@
               }
 
               var particleCount = 50 * (timeLeft / duration);
-              // Confetti burst from two sides
               confetti(Object.assign({}, defaults, { particleCount, origin: { x: randomInRange(0.1, 0.3), y: Math.random() - 0.2 } }));
               confetti(Object.assign({}, defaults, { particleCount, origin: { x: randomInRange(0.7, 0.9), y: Math.random() - 0.2 } }));
             }, 250);
         }
 
-        // Relock Page Option
         function lockPage() {
             const lockScreen = document.getElementById('lock-screen');
             const contentScreen = document.getElementById('content-screen');
