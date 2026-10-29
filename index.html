@@ -82,11 +82,7 @@
             <i class="fa-solid fa-heart text-red-500 text-4xl animate-pulse"></i>
         </div>
 
-        <h1 class="text-3xl font-bold font-serif-romantic mb-2 tracking-wide">Sana Özel Bir Sürpriz ❤️</h1>
-        <p class="text-white/80 text-sm mb-6 leading-relaxed">
-            İkimiz için özel olan şifreyi gir sevgilim.<br>
-            <span class="text-xs text-white/60 italic">(İpucu: Varsayılan şifre: <strong class="text-white">1402</strong>)</span>
-        </p>
+        <h1 class="text-3xl font-bold font-serif-romantic mb-6 tracking-wide">Sana Özel Bir Sürpriz ❤️</h1>
 
         <!-- Form -->
         <form onsubmit="handleLogin(event)" class="space-y-4">
@@ -134,13 +130,13 @@
                 </button>
             </div>
 
-            <!-- Video Container -->
-            <div class="mb-10">
-                <div class="relative w-full rounded-2xl overflow-hidden shadow-2xl bg-black/40 border border-white/20 aspect-video">
+            <!-- Video Container (Reels / Shorts Dikey Format) -->
+            <div class="mb-10 flex justify-center">
+                <div class="relative w-full max-w-xs rounded-2xl overflow-hidden shadow-2xl bg-black/40 border border-white/20 aspect-[9/16]">
                     <iframe 
                         id="romantic-video"
                         class="w-full h-full"
-                        src="https://www.youtube-nocookie.com/embed/gQG_2O9BaVw?autoplay=0&rel=0" 
+                        src="https://www.youtube-nocookie.com/embed/LQpdnp08qxc?autoplay=0&rel=0" 
                         title="Bizim Hikayemiz" 
                         frameborder="0" 
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
@@ -155,7 +151,7 @@
                     <i class="fa-solid fa-quote-left text-rose-300"></i> Sana Küçük Bir Not
                 </h3>
                 <p class="text-white/90 leading-relaxed italic">
-                    "Hayatıma girdiğin ilk andan itibaren her günümü daha anlamlı ve özel kıldığın için teşekkür ederim. Birlikte güldüğümüz, gezdiğimiz ve biriktirdiğimiz tüm güzel anılar bu sitede ve kalbimde sonsuza kadar saklı kalacak."
+                    "Eşşek değilsin ya tabikide 29 ekimde çiçek alcaksın"
                 </p>
             </div>
 
@@ -165,7 +161,7 @@
                     <i class="fa-solid fa-images text-pink-300"></i> En Özel Anlarımız
                 </h3>
                 <div class="grid grid-cols-2 sm:grid-cols-3 gap-4">
-                    <!-- 1. Fotoğrafın (Kendi Fotoğrafın) -->
+                    <!-- 1. Fotoğraf -->
                     <div class="group relative aspect-square rounded-xl overflow-hidden border border-white/30 bg-white/10 shadow-md transition transform hover:scale-105">
                         <img src="20251228_171447.jpg" alt="Özel Anımız" class="w-full h-full object-cover">
                         <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent opacity-0 group-hover:opacity-100 transition flex items-end p-3">
@@ -199,7 +195,7 @@
 
     <!-- JavaScript Controls -->
     <script>
-        const CORRECT_PASSWORD = "1402";
+        const CORRECT_PASSWORD = "0309";
 
         function createHeart() {
             const heartsContainer = document.getElementById('hearts-container');
